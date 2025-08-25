@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -23,13 +24,13 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button size="lg" asChild>
-              <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Ingyenes kipróbálás</a>
+              <Link href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">Ingyenes kipróbálás</Link>
             </Button>
           </div>
         </div>
         <div className="flex justify-center">
           <Image
-            src="https://placehold.co/600x400.png"
+            src="/hero-image.png"
             alt="VillanyPro App bemutató"
             width={600}
             height={400}
