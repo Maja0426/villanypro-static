@@ -65,7 +65,8 @@ export default function Benefits() {
     <section id="benefits" className="py-20 md:py-24 bg-muted/30 dark:bg-muted/10">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold">Miért a VillanyPro a legjobb választás?</h2>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold">Adminisztráljon kevesebbet, keressen többet!</h2>
+          <p className="text-lg text-muted-foreground">A VillanyPro leveszi a válláról az adminisztrációs terheket, hogy Ön arra fókuszálhasson, amihez a legjobban ért: a villanyszerelésre.</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8 mt-12">
           {benefits.map((benefit) => (
