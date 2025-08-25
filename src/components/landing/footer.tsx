@@ -32,10 +32,10 @@ export default function Footer() {
                 <div>
                     <h4 className="font-semibold mb-3">Oldaltérkép</h4>
                     <ul className="space-y-2">
-                        <li><Link href="#hero" className="text-muted-foreground hover:text-foreground">Főoldal</Link></li>
-                        <li><Link href="#features" className="text-muted-foreground hover:text-foreground">Funkciók</Link></li>
-                        <li><Link href="#benefits" className="text-muted-foreground hover:text-foreground">Előnyök</Link></li>
-                        <li><Link href="#pricing" className="text-muted-foreground hover:text-foreground">Árak</Link></li>
+                        <li><Link href="/#hero" className="text-muted-foreground hover:text-foreground">Főoldal</Link></li>
+                        <li><Link href="/#features" className="text-muted-foreground hover:text-foreground">Funkciók</Link></li>
+                        <li><Link href="/#benefits" className="text-muted-foreground hover:text-foreground">Előnyök</Link></li>
+                        <li><Link href="/#pricing" className="text-muted-foreground hover:text-foreground">Árak</Link></li>
                     </ul>
                 </div>
                 <div>
@@ -44,7 +44,7 @@ export default function Footer() {
                         <li><Link href="/suti-tajekoztato" className="text-muted-foreground hover:text-foreground">Süti tájékoztató</Link></li>
                         <li><Link href="#" className="text-muted-foreground hover:text-foreground">Adatkezelési tájékoztató</Link></li>
                         <li><Link href="#" className="text-muted-foreground hover:text-foreground">ÁSZF</Link></li>
-                        <li><Link href="#" className="text-muted-foreground hover:text-foreground">Impresszum</Link></li>
+                        <li><Link href="/impresszum" className="text-muted-foreground hover:text-foreground">Impresszum</Link></li>
                         <li><Button variant="link" onClick={handleCookieSettingsClick} className="p-0 h-auto text-muted-foreground hover:text-foreground">Süti beállítások</Button></li>
                     </ul>
                 </div>
