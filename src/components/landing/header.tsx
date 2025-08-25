@@ -58,11 +58,6 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
-            <SheetHeader>
-                <SheetTitle>
-                    <span className="sr-only">Mobil menü</span>
-                </SheetTitle>
-            </SheetHeader>
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between border-b pb-4">
                  <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
