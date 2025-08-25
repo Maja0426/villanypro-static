@@ -43,7 +43,7 @@ export default function Footer() {
                     <ul className="space-y-2">
                         <li><Link href="/suti-tajekoztato" className="text-muted-foreground hover:text-foreground">Süti tájékoztató</Link></li>
                         <li><Link href="/adatkezelesi-tajekoztato" className="text-muted-foreground hover:text-foreground">Adatkezelési tájékoztató</Link></li>
-                        <li><Link href="#" className="text-muted-foreground hover:text-foreground">ÁSZF</Link></li>
+                        <li><Link href="/aszf" className="text-muted-foreground hover:text-foreground">ÁSZF</Link></li>
                         <li><Link href="/impresszum" className="text-muted-foreground hover:text-foreground">Impresszum</Link></li>
                         <li><Button variant="link" onClick={handleCookieSettingsClick} className="p-0 h-auto text-muted-foreground hover:text-foreground">Süti beállítások</Button></li>
                     </ul>
