@@ -23,7 +23,7 @@ export default function Hero() {
             Kezelje ügyfeleit, munkalapjait és pénzügyeit egyszerűen, hogy több ideje maradjon a valódi munkára.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <Button size="lg" asChild>
+            <Button size="lg" asChild className="shadow-md hover:shadow-lg transition-shadow">
               <Link href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">Ingyenes kipróbálás</Link>
             </Button>
           </div>
@@ -34,7 +34,7 @@ export default function Hero() {
             alt="VillanyPro App bemutató"
             width={600}
             height={400}
-            className="rounded-lg shadow-2xl"
+            className="rounded-lg shadow-2xl animate-float"
             data-ai-hint="app dashboard"
           />
         </div>
