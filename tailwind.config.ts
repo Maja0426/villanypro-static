@@ -109,7 +109,7 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float': 'float 6s ease-in-out infinite',
-        'scroll': 'scroll 60s linear infinite',
+        'scroll': 'scroll 90s linear infinite',
       },
     },
   },
