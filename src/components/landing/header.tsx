@@ -7,7 +7,7 @@ import { Menu } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
 
 const navLinks = [
@@ -56,8 +56,11 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="right">
+            <SheetHeader>
+              <SheetTitle className="sr-only">Mobil menü</SheetTitle>
+            </SheetHeader>
             <div className="flex flex-col h-full">
-              <div className="flex items-center">
+              <div className="flex items-center border-b pb-4">
                  <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
                     <Logo />
                 </Link>
@@ -74,7 +77,7 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-              <div className="mt-auto flex flex-col gap-2">
+              <div className="mt-auto flex flex-col gap-2 border-t pt-4">
                  <Button variant="ghost" asChild>
                     <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Bejelentkezés</a>
                 </Button>
