@@ -14,6 +14,7 @@ import { ThemeToggle } from '../theme-toggle';
 const navLinks = [
   { name: 'Funkciók', href: '#features' },
   { name: 'Előnyök', href: '#benefits' },
+  { name: 'Vélemények', href: '#testimonials' },
   { name: 'Árak', href: '#pricing' },
 ];
 
