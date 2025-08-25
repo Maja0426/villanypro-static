@@ -8,6 +8,7 @@ import {
 import { documentation } from "@/config/documentation";
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
+import ReactMarkdown from "react-markdown";
 
 export default function SugoPage() {
   const sortedDocs = [...documentation].sort((a, b) => a.order - b.order);
@@ -35,7 +36,17 @@ export default function SugoPage() {
                     {category.articles.sort((a,b) => a.order - b.order).map((article) => (
                       <div key={article.id}>
                         <h3 className="text-xl font-headline font-semibold mb-2">{article.title}</h3>
-                        <p className="text-muted-foreground whitespace-pre-line">{article.content}</p>
+                        <div className="prose prose-sm max-w-none text-muted-foreground">
+                            <ReactMarkdown
+                                components={{
+                                    p: ({node, ...props}) => <p className="mb-4" {...props} />,
+                                    ul: ({node, ...props}) => <ul className="list-disc pl-5 mb-4 space-y-2" {...props} />,
+                                    strong: ({node, ...props}) => <strong className="font-semibold text-foreground" {...props} />,
+                                }}
+                            >
+                                {article.content}
+                            </ReactMarkdown>
+                        </div>
                       </div>
                     ))}
                   </div>
