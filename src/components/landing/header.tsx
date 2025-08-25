@@ -13,6 +13,7 @@ import { ThemeToggle } from '../theme-toggle';
 
 const navLinks = [
   { name: 'Funkciók', href: '#features' },
+  { name: 'Hogyan működik?', href: '#how-it-works' },
   { name: 'Előnyök', href: '#benefits' },
   { name: 'Vélemények', href: '#testimonials' },
   { name: 'GYIK', href: '#faq' },

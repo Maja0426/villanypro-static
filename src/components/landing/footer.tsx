@@ -34,6 +34,7 @@ export default function Footer() {
                     <ul className="space-y-2">
                         <li><Link href="/#hero" className="text-muted-foreground hover:text-foreground">Főoldal</Link></li>
                         <li><Link href="/#features" className="text-muted-foreground hover:text-foreground">Funkciók</Link></li>
+                        <li><Link href="/#how-it-works" className="text-muted-foreground hover:text-foreground">Hogyan működik?</Link></li>
                         <li><Link href="/#benefits" className="text-muted-foreground hover:text-foreground">Előnyök</Link></li>
                         <li><Link href="/#testimonials" className="text-muted-foreground hover:text-foreground">Vélemények</Link></li>
                         <li><Link href="/#faq" className="text-muted-foreground hover:text-foreground">GYIK</Link></li>
