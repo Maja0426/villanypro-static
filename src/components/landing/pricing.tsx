@@ -67,7 +67,7 @@ export default function Pricing() {
               </CardContent>
               <CardFooter>
                 <Button className="w-full" variant={plan.isPopular ? 'default' : 'outline'} asChild>
-                    <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">
+                    <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">
                         {plan.name === 'Free' ? 'Kipróbálom' : 'Választom'}
                     </a>
                 </Button>

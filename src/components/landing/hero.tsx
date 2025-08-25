@@ -23,7 +23,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button size="lg" asChild>
-              <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">Ingyenes kipróbálás</a>
+              <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Ingyenes kipróbálás</a>
             </Button>
           </div>
         </div>

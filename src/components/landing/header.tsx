@@ -44,7 +44,7 @@ export default function Header() {
             <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Bejelentkezés</a>
           </Button>
           <Button asChild>
-            <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">Regisztráció</a>
+            <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Regisztráció</a>
           </Button>
         </div>
 
@@ -79,7 +79,7 @@ export default function Header() {
                     <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Bejelentkezés</a>
                 </Button>
                 <Button asChild>
-                    <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">Regisztráció</a>
+                    <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Regisztráció</a>
                 </Button>
               </div>
             </div>
