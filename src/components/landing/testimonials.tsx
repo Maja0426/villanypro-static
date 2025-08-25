@@ -78,10 +78,10 @@ export default function Testimonials() {
           <CarouselContent>
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
+                <div className="p-1 h-full">
                   <Card className="p-6 h-full">
                     <CardContent className="p-0 flex flex-col justify-between h-full">
-                      <p className="text-muted-foreground mb-6">"{testimonial.quote}"</p>
+                      <p className="text-muted-foreground mb-6 flex-grow">"{testimonial.quote}"</p>
                       <div className="flex items-center gap-4">
                         <Avatar>
                           <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.avatarHint} />
