@@ -13,39 +13,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-
-const plans = [
-  {
-    name: 'Free',
-    price: '0 Ft',
-    period: '/ hó',
-    description: 'Induló vállalkozásoknak és kipróbálásra.',
-    features: ['5 ügyfél', '10 munkalap / hó', 'Alap funkciók'],
-    isPopular: false,
-    cta: 'Kipróbálom',
-    isAvailable: true,
-  },
-  {
-    name: 'Basic',
-    price: '4 990 Ft',
-    period: '/ hó',
-    description: 'Növekvő vállalkozásoknak és egyéni vállalkozóknak.',
-    features: ['Korlátlan ügyfél', '50 munkalap / hó', 'Minden funkció', 'Email támogatás'],
-    isPopular: true,
-    cta: 'Választom',
-    isAvailable: false,
-  },
-  {
-    name: 'Pro',
-    price: '9 990 Ft',
-    period: '/ hó',
-    description: 'Csapatoknak és nagyobb megbízásokhoz.',
-    features: ['Minden a Basic-ben', 'Korlátlan munkalap', 'Telefonos támogatás'],
-    isPopular: false,
-    cta: 'Választom',
-    isAvailable: false,
-  },
-];
+import { plans } from '@/config/pricing';
 
 export default function Pricing() {
   return (
@@ -84,7 +52,7 @@ export default function Pricing() {
               <CardFooter>
                 {plan.isAvailable ? (
                     <Button className="w-full" variant={plan.isPopular ? 'default' : 'outline'} asChild>
-                        <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">
+                        <a href={plan.href || '#'} target="_blank" rel="noopener noreferrer">
                             {plan.cta}
                         </a>
                     </Button>
