@@ -12,6 +12,7 @@ const plans = [
     description: 'Induló vállalkozásoknak és kipróbálásra.',
     features: ['5 ügyfél', '10 munkalap / hó', 'Alap funkciók'],
     isPopular: false,
+    cta: 'Kipróbálom'
   },
   {
     name: 'Basic',
@@ -20,6 +21,7 @@ const plans = [
     description: 'Növekvő vállalkozásoknak és egyéni vállalkozóknak.',
     features: ['Korlátlan ügyfél', '50 munkalap / hó', 'Minden funkció', 'Email támogatás'],
     isPopular: true,
+    cta: 'Választom'
   },
   {
     name: 'Pro',
@@ -28,6 +30,7 @@ const plans = [
     description: 'Csapatoknak és nagyobb megbízásokhoz.',
     features: ['Minden a Basic-ben', 'Korlátlan munkalap', 'Telefonos támogatás'],
     isPopular: false,
+    cta: 'Választom'
   },
 ];
 
@@ -67,8 +70,8 @@ export default function Pricing() {
               </CardContent>
               <CardFooter>
                 <Button className="w-full" variant={plan.isPopular ? 'default' : 'outline'} asChild>
-                    <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">
-                        {plan.name === 'Free' ? 'Kipróbálom' : 'Választom'}
+                    <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">
+                        {plan.cta}
                     </a>
                 </Button>
               </CardFooter>

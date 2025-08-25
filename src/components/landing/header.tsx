@@ -46,7 +46,7 @@ export default function Header() {
             <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Bejelentkezés</a>
           </Button>
           <Button asChild>
-            <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Regisztráció</a>
+            <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">Regisztráció</a>
           </Button>
         </div>
 
@@ -59,7 +59,9 @@ export default function Header() {
           </SheetTrigger>
           <SheetContent side="right">
             <SheetHeader>
-              <SheetTitle className="sr-only">Mobil menü</SheetTitle>
+                <SheetTitle>
+                    <span className="sr-only">Mobil menü</span>
+                </SheetTitle>
             </SheetHeader>
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between border-b pb-4">
@@ -85,7 +87,7 @@ export default function Header() {
                     <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Bejelentkezés</a>
                 </Button>
                 <Button asChild>
-                    <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Regisztráció</a>
+                    <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">Regisztráció</a>
                 </Button>
               </div>
             </div>
