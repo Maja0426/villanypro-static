@@ -1,5 +1,6 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
+import { Button } from "@/components/ui/button";
 
 export default function CookiePolicy() {
   return (
@@ -47,6 +48,8 @@ export default function CookiePolicy() {
               <li>bizonyos típusok blokkolására,</li>
               <li>értesítés kérésére új süti elhelyezéséről.</li>
             </ul>
+             <p className="text-muted-foreground">Itt tudja módosítani a beállításokat:</p>
+            <Button onClick={() => { localStorage.removeItem('cookie_consent'); window.location.reload(); }}>Süti beállítások módosítása</Button>
             <p className="text-muted-foreground">További információk a népszerű böngészőkhöz:</p>
             <ul className="list-disc list-inside space-y-2">
               <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Google Chrome</a></li>

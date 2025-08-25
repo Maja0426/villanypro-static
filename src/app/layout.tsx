@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/theme-provider';
+import CookieConsent from '@/components/cookie-consent';
 
 export const metadata: Metadata = {
   title: 'VillanyPro - Modern Szoftver Villanyszerelőknek',
@@ -33,6 +34,7 @@ export default function RootLayout({
             {children}
           </div>
           <Toaster />
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>
