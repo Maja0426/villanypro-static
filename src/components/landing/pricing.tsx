@@ -27,7 +27,7 @@ export default function Pricing() {
         </div>
         <div className="grid lg:grid-cols-3 gap-8 mt-12 max-w-5xl mx-auto">
           {plans.map((plan) => (
-            <Card key={plan.name} className={cn('flex flex-col', plan.isPopular && 'border-primary shadow-lg')}>
+            <Card key={plan.name} className={cn('flex flex-col relative', plan.isPopular && 'border-primary shadow-lg')}>
                 {plan.isPopular && (
                     <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">Legnépszerűbb</Badge>
                 )}
