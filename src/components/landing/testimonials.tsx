@@ -1,6 +1,10 @@
+'use client';
+
+import * as React from 'react';
+import Autoplay from "embla-carousel-autoplay";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -38,7 +42,7 @@ const testimonials = [
     avatar: 'https://placehold.co/100x100.png',
     avatarHint: 'woman smiling'
   },
-    {
+  {
     name: 'Horváth Gábor',
     title: 'Több fős csapatot irányít',
     quote: 'A Pro csomag a csapatok funkcióval tökéletes megoldás számunkra. Mindenki látja a saját feladatait, a készlet pedig központi, így nincsenek többé félreértések.',
@@ -48,6 +52,10 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  );
+
   return (
     <section id="testimonials" className="py-20 md:py-24">
       <div className="container">
@@ -57,32 +65,40 @@ export default function Testimonials() {
             Büszkék vagyunk rá, hogy villanyszerelők százainak segítünk a mindennapi munkában.
           </p>
         </div>
-        <div 
-          className="relative mt-12 w-full overflow-hidden"
-          style={{
-            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+        <Carousel
+          plugins={[plugin.current]}
+          className="w-full mt-12"
+          opts={{
+            align: "start",
+            loop: true,
           }}
+          onMouseEnter={plugin.current.stop}
+          onMouseLeave={plugin.current.reset}
         >
-          <div className="flex min-w-full w-max flex-nowrap animate-scroll">
-            {[...testimonials, ...testimonials].map((testimonial, index) => (
-              <Card key={index} className="p-6 w-[380px] shrink-0 mx-4">
-                <CardContent className="p-0">
-                  <p className="text-muted-foreground mb-6 h-32">"{testimonial.quote}"</p>
-                  <div className="flex items-center gap-4">
-                    <Avatar>
-                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.avatarHint} />
-                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+          <CarouselContent>
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card className="p-6 h-full">
+                    <CardContent className="p-0 flex flex-col justify-between h-full">
+                      <p className="text-muted-foreground mb-6">"{testimonial.quote}"</p>
+                      <div className="flex items-center gap-4">
+                        <Avatar>
+                          <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.avatarHint} />
+                          <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-semibold">{testimonial.name}</p>
+                          <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
