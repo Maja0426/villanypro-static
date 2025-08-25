@@ -1,5 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
@@ -22,6 +23,27 @@ const testimonials = [
     quote: 'A csapatom munkáját sokkal könnyebb követni a VillanyPro segítségével. A közös munkalapok és a naptár integráció rendet tett a káoszban. Az ügyfelek is elégedettebbek, mert mindent pontosan dokumentálunk.',
     avatar: 'https://placehold.co/100x100.png',
     avatarHint: 'man portrait professional'
+  },
+  {
+    name: 'Tóth László',
+    title: 'Villamosmérnök',
+    quote: 'A jelentések és a pénzügyi kimutatások aranyat érnek. Végre pontosan látom a vállalkozásom teljesítményét, ami segít a jobb döntések meghozatalában. Csak ajánlani tudom!',
+    avatar: 'https://placehold.co/100x100.png',
+    avatarHint: 'man professional'
+  },
+  {
+    name: 'Varga Éva',
+    title: 'Frissen végzett villanyszerelő',
+    quote: 'Pályakezdőként hatalmas segítség, hogy egy ilyen modern eszközzel indulhatok. Nem kell a papírozással bajlódnom, így a szakmai fejlődésre koncentrálhatok. Nagyon felhasználóbarát!',
+    avatar: 'https://placehold.co/100x100.png',
+    avatarHint: 'woman smiling'
+  },
+    {
+    name: 'Horváth Gábor',
+    title: 'Több fős csapatot irányít',
+    quote: 'A Pro csomag a csapatok funkcióval tökéletes megoldás számunkra. Mindenki látja a saját feladatait, a készlet pedig központi, így nincsenek többé félreértések.',
+    avatar: 'https://placehold.co/100x100.png',
+    avatarHint: 'man glasses'
   }
 ];
 
@@ -35,24 +57,31 @@ export default function Testimonials() {
             Büszkék vagyunk rá, hogy villanyszerelők százainak segítünk a mindennapi munkában.
           </p>
         </div>
-        <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
-          {testimonials.map((testimonial) => (
-            <Card key={testimonial.name} className="p-6">
-              <CardContent className="p-0">
-                <p className="text-muted-foreground mb-6">"{testimonial.quote}"</p>
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.avatarHint} />
-                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <p className="font-semibold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+        <div 
+          className="relative mt-12 w-full overflow-hidden"
+          style={{
+            maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+          }}
+        >
+          <div className="flex min-w-full w-max flex-nowrap animate-scroll">
+            {[...testimonials, ...testimonials].map((testimonial, index) => (
+              <Card key={index} className="p-6 w-[380px] shrink-0 mx-4">
+                <CardContent className="p-0">
+                  <p className="text-muted-foreground mb-6 h-32">"{testimonial.quote}"</p>
+                  <div className="flex items-center gap-4">
+                    <Avatar>
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.avatarHint} />
+                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.title}</p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
