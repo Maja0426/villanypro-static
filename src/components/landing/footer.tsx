@@ -36,6 +36,7 @@ export default function Footer() {
                         <li><Link href="/#features" className="text-muted-foreground hover:text-foreground">Funkciók</Link></li>
                         <li><Link href="/#benefits" className="text-muted-foreground hover:text-foreground">Előnyök</Link></li>
                         <li><Link href="/#testimonials" className="text-muted-foreground hover:text-foreground">Vélemények</Link></li>
+                        <li><Link href="/#faq" className="text-muted-foreground hover:text-foreground">GYIK</Link></li>
                         <li><Link href="/#pricing" className="text-muted-foreground hover:text-foreground">Árak</Link></li>
                         <li><Link href="/sugo" className="text-muted-foreground hover:text-foreground">Súgó</Link></li>
                     </ul>

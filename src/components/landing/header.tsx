@@ -15,6 +15,7 @@ const navLinks = [
   { name: 'Funkciók', href: '#features' },
   { name: 'Előnyök', href: '#benefits' },
   { name: 'Vélemények', href: '#testimonials' },
+  { name: 'GYIK', href: '#faq' },
   { name: 'Árak', href: '#pricing' },
 ];
 
