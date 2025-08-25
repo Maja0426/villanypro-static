@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import Logo from '@/components/logo';
+import { ThemeToggle } from '../theme-toggle';
 
 const navLinks = [
   { name: 'Funkciók', href: '#features' },
@@ -40,6 +41,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
+           <ThemeToggle />
           <Button variant="ghost" asChild>
             <a href="https://app.villanypro.hu" target="_blank" rel="noopener noreferrer">Bejelentkezés</a>
           </Button>
@@ -60,10 +62,11 @@ export default function Header() {
               <SheetTitle className="sr-only">Mobil menü</SheetTitle>
             </SheetHeader>
             <div className="flex flex-col h-full">
-              <div className="flex items-center border-b pb-4">
+              <div className="flex items-center justify-between border-b pb-4">
                  <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
                     <Logo />
                 </Link>
+                <ThemeToggle />
               </div>
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
