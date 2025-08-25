@@ -1,8 +1,18 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Check } from 'lucide-react';
+import { Check, Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 const plans = [
   {
@@ -12,7 +22,8 @@ const plans = [
     description: 'Induló vállalkozásoknak és kipróbálásra.',
     features: ['5 ügyfél', '10 munkalap / hó', 'Alap funkciók'],
     isPopular: false,
-    cta: 'Kipróbálom'
+    cta: 'Kipróbálom',
+    isAvailable: true,
   },
   {
     name: 'Basic',
@@ -21,7 +32,8 @@ const plans = [
     description: 'Növekvő vállalkozásoknak és egyéni vállalkozóknak.',
     features: ['Korlátlan ügyfél', '50 munkalap / hó', 'Minden funkció', 'Email támogatás'],
     isPopular: true,
-    cta: 'Választom'
+    cta: 'Választom',
+    isAvailable: false,
   },
   {
     name: 'Pro',
@@ -30,7 +42,8 @@ const plans = [
     description: 'Csapatoknak és nagyobb megbízásokhoz.',
     features: ['Minden a Basic-ben', 'Korlátlan munkalap', 'Telefonos támogatás'],
     isPopular: false,
-    cta: 'Választom'
+    cta: 'Választom',
+    isAvailable: false,
   },
 ];
 
@@ -69,11 +82,35 @@ export default function Pricing() {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full" variant={plan.isPopular ? 'default' : 'outline'} asChild>
-                    <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">
-                        {plan.cta}
-                    </a>
-                </Button>
+                {plan.isAvailable ? (
+                    <Button className="w-full" variant={plan.isPopular ? 'default' : 'outline'} asChild>
+                        <a href="https://app.villanypro.hu/register" target="_blank" rel="noopener noreferrer">
+                            {plan.cta}
+                        </a>
+                    </Button>
+                ) : (
+                  <AlertDialog>
+                    <AlertDialogTrigger asChild>
+                      <Button className="w-full" variant={plan.isPopular ? 'default' : 'outline'}>{plan.cta}</Button>
+                    </AlertDialogTrigger>
+                    <AlertDialogContent>
+                      <AlertDialogHeader>
+                        <div className="flex justify-center mb-4">
+                            <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+                                <Info className="w-8 h-8" />
+                            </div>
+                        </div>
+                        <AlertDialogTitle className="text-center font-headline text-2xl">Hamarosan elérhető!</AlertDialogTitle>
+                        <AlertDialogDescription className="text-center">
+                          Ez a csomag jelenleg fejlesztés alatt áll. Keményen dolgozunk, hogy minél hamarabb az Ön rendelkezésére bocsássuk!
+                        </AlertDialogDescription>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogAction className="w-full">Rendben</AlertDialogAction>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>
+                )}
               </CardFooter>
             </Card>
           ))}
