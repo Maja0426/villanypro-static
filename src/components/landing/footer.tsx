@@ -1,9 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import Logo from '@/components/logo';
 import { Button } from '@/components/ui/button';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const handleCookieSettingsClick = () => {
+    try {
+      localStorage.removeItem('cookie_consent');
+      window.location.reload();
+    } catch (error) {
+      // Silently fail
+    }
+  };
 
   return (
     <footer className="border-t">
@@ -34,7 +45,7 @@ export default function Footer() {
                         <li><Link href="#" className="text-muted-foreground hover:text-foreground">Adatkezelési tájékoztató</Link></li>
                         <li><Link href="#" className="text-muted-foreground hover:text-foreground">ÁSZF</Link></li>
                         <li><Link href="#" className="text-muted-foreground hover:text-foreground">Impresszum</Link></li>
-                        <li><Button variant="link" className="p-0 h-auto text-muted-foreground hover:text-foreground">Süti beállítások</Button></li>
+                        <li><Button variant="link" onClick={handleCookieSettingsClick} className="p-0 h-auto text-muted-foreground hover:text-foreground">Süti beállítások</Button></li>
                     </ul>
                 </div>
             </div>
