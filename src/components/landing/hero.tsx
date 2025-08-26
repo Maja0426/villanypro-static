@@ -36,6 +36,7 @@ export default function Hero() {
             height={400}
             className="rounded-lg shadow-2xl animate-float"
             data-ai-hint="app dashboard"
+            priority
           />
         </div>
       </div>
