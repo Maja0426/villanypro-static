@@ -39,12 +39,12 @@ export default function Footer() {
                         <li><Link href="/#testimonials" className="text-muted-foreground hover:text-foreground">Vélemények</Link></li>
                         <li><Link href="/#faq" className="text-muted-foreground hover:text-foreground">GYIK</Link></li>
                         <li><Link href="/#pricing" className="text-muted-foreground hover:text-foreground">Árak</Link></li>
-                        <li><Link href="/sugo" className="text-muted-foreground hover:text-foreground">Súgó</Link></li>
                     </ul>
                 </div>
                 <div>
                     <h4 className="font-semibold mb-3">Jogi információk</h4>
                     <ul className="space-y-2">
+                        <li><Link href="/sugo" className="text-muted-foreground hover:text-foreground">Súgó</Link></li>
                         <li><Link href="/suti-tajekoztato" className="text-muted-foreground hover:text-foreground">Süti tájékoztató</Link></li>
                         <li><Link href="/adatkezelesi-tajekoztato" className="text-muted-foreground hover:text-foreground">Adatkezelési tájékoztató</Link></li>
                         <li><Link href="/aszf" className="text-muted-foreground hover:text-foreground">ÁSZF</Link></li>

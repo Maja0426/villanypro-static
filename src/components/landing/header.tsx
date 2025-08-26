@@ -12,17 +12,19 @@ import Logo from '@/components/logo';
 import { ThemeToggle } from '../theme-toggle';
 
 const navLinks = [
-  { name: 'Funkciók', href: '#features' },
-  { name: 'Hogyan működik?', href: '#how-it-works' },
-  { name: 'Előnyök', href: '#benefits' },
-  { name: 'Vélemények', href: '#testimonials' },
-  { name: 'GYIK', href: '#faq' },
-  { name: 'Árak', href: '#pricing' },
+  { name: 'Funkciók', href: '/#features' },
+  { name: 'Hogyan működik?', href: '/#how-it-works' },
+  { name: 'Előnyök', href: '/#benefits' },
+  { name: 'Vélemények', href: '/#testimonials' },
+  { name: 'GYIK', href: '/#faq' },
+  { name: 'Árak', href: '/#pricing' },
+  { name: 'Súgó', href: '/sugo' },
 ];
 
 export default function Header() {
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -36,7 +38,15 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="transition-colors hover:text-foreground/80 text-foreground/60"
+              className={cn("transition-colors hover:text-foreground/80 text-foreground/60", {
+                  "pointer-events-none": !isHomePage && link.href.startsWith('/#')
+              })}
+              onClick={(e) => {
+                if (!isHomePage && link.href.startsWith('/#')) {
+                  e.preventDefault();
+                  window.location.href = link.href;
+                }
+              }}
             >
               {link.name}
             </Link>
