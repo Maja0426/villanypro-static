@@ -8,6 +8,9 @@ import CookieConsent from '@/components/cookie-consent';
 export const metadata: Metadata = {
   title: 'VillanyPro - Modern Szoftver Villanyszerelőknek',
   description: 'Kezelje ügyfeleit, munkalapjait és pénzügyeit egyszerűen, hogy több ideje maradjon a valódi munkára.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
