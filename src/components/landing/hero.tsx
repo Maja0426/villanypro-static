@@ -30,7 +30,7 @@ export default function Hero() {
         </div>
         <div className="flex justify-center">
           <Image
-            src="https://picsum.photos/600/400"
+            src="/hero-image.png"
             alt="VillanyPro App bemutató"
             width={600}
             height={400}
