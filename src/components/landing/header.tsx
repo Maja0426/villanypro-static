@@ -76,7 +76,7 @@ export default function Header() {
                  <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
                     <Logo />
                 </Link>
-                <ThemeToggle />
+                <ThemeToggle onThemeChange={() => setOpen(false)} />
               </div>
               <div className="flex flex-col gap-4 py-8">
                 {navLinks.map((link) => (
